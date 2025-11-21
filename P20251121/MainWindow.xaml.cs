@@ -49,6 +49,7 @@ namespace P20251121
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.ShowDialog();
+            File.WriteAllText(dialog.FileName, textBox.Text);
         }
     }
 }
