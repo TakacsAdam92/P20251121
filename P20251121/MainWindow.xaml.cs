@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,18 @@ namespace P20251121
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void New_window(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window();
+            window.Show();
+        }
+
+        private void Open_window(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
         }
     }
 }
