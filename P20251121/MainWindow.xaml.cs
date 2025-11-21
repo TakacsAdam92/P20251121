@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,13 +34,20 @@ namespace P20251121
 
         private void New_window(object sender, RoutedEventArgs e)
         {
-            Window window = new Window();
-            window.Show();
+            FileStream f = new FileStream("proba.txt", FileMode.Create);
+            f.Close();
         }
 
         private void Open_window(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
+            textBox.Text = File.ReadAllText(dialog.FileName);
+        }
+
+        private void Save_file(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
             dialog.ShowDialog();
         }
     }
