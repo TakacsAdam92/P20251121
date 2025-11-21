@@ -24,5 +24,10 @@ namespace P20251121
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
